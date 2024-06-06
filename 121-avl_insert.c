@@ -3,7 +3,7 @@
 /**
  * avl_insert_full - Inserts a value
  *
- * @tree: pointer to the root
+ * @tree: pointer to the foot
  * @parent: parent of node
  * @value: the value
  * Return: pointer to the new_node node
@@ -33,13 +33,13 @@ avl_t *avl_insert_full(avl_t *tree, avl_t *parent, int value)
 /**
  * val_balancer - rebalance an AVL tree if needed
  *
- * @root: pointer to the root of the tree
+ * @foot: pointer to the foot of the tree
  * @tree: pointer to the node to be rebalanced
  * @value: inserted value
  * Return: 0
  */
 
-void val_balancer(avl_t **root, avl_t *tree, int value)
+void val_balancer(avl_t **foot, avl_t *tree, int value)
 {
 	int new_balance;
 
@@ -48,14 +48,14 @@ void val_balancer(avl_t **root, avl_t *tree, int value)
 	{
 		if (tree->left->n > value)
 		{
-			if (*root == tree)
-				*root = tree->left;
+			if (*foot == tree)
+				*foot = tree->left;
 			binary_tree_rotate_right(tree);
 		}
 		else
 		{
-			if (*root == tree)
-				*root = tree->left->right;
+			if (*foot == tree)
+				*foot = tree->left->right;
 			binary_tree_rotate_left(tree->left);
 			binary_tree_rotate_right(tree);
 		}
@@ -64,14 +64,14 @@ void val_balancer(avl_t **root, avl_t *tree, int value)
 	{
 		if (tree->right->n < value)
 		{
-			if (*root == tree)
-				*root = tree->right;
+			if (*foot == tree)
+				*foot = tree->right;
 			binary_tree_rotate_left(tree);
 		}
 		else
 		{
-			if (*root == tree)
-				*root = tree->right->left;
+			if (*foot == tree)
+				*foot = tree->right->left;
 			binary_tree_rotate_right(tree->right);
 			binary_tree_rotate_left(tree);
 		}
@@ -82,7 +82,7 @@ void val_balancer(avl_t **root, avl_t *tree, int value)
 /**
  * avl_insert - Insets the value in avl
  *
- * @tree: double pointer to root
+ * @tree: double pointer to foot
  * @value: the value
  * Return: pointer to the new node
  */

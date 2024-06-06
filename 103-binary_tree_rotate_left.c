@@ -2,9 +2,9 @@
 
 /**
  * binary_tree_rotate_left -  a left rotation
- * @tree: Pointerroot
+ * @tree: Pointerfoot
  *
- * Return: Pointer  root
+ * Return: Pointer  foot
  */
 binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree)
 {

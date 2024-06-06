@@ -9,37 +9,37 @@
  */
 int main(void)
 {
-	binary_tree_t *root;
+	binary_tree_t *foot;
 	int complete;
 
-	root = binary_tree_node(NULL, 98);
-	root->left = binary_tree_node(root, 12);
-	root->right = binary_tree_node(root, 128);
-	root->left->right = binary_tree_node(root->left, 54);
-	root->right->right = binary_tree_node(root, 402);
-	root->left->left = binary_tree_node(root->left, 10);
+	foot = binary_tree_node(NULL, 98);
+	foot->left = binary_tree_node(foot, 12);
+	foot->right = binary_tree_node(foot, 128);
+	foot->left->right = binary_tree_node(foot->left, 54);
+	foot->right->right = binary_tree_node(foot, 402);
+	foot->left->left = binary_tree_node(foot->left, 10);
 
-	binary_tree_print(root);
-	complete = binary_tree_is_complete(root);
-	printf("Is %d complete: %d\n", root->n, complete);
-	complete = binary_tree_is_complete(root->left);
-	printf("Is %d complete: %d\n", root->left->n, complete);
+	binary_tree_print(foot);
+	complete = binary_tree_is_complete(foot);
+	printf("Is %d complete: %d\n", foot->n, complete);
+	complete = binary_tree_is_complete(foot->left);
+	printf("Is %d complete: %d\n", foot->left->n, complete);
 
-	root->right->left = binary_tree_node(root->right, 112);
-	binary_tree_print(root);
-	complete = binary_tree_is_complete(root);
-	printf("Is %d complete: %d\n", root->n, complete);
+	foot->right->left = binary_tree_node(foot->right, 112);
+	binary_tree_print(foot);
+	complete = binary_tree_is_complete(foot);
+	printf("Is %d complete: %d\n", foot->n, complete);
 
-	root->left->left->left = binary_tree_node(root->left->left, 8);
-	binary_tree_print(root);
-	complete = binary_tree_is_complete(root);
-	printf("Is %d complete: %d\n", root->n, complete);
+	foot->left->left->left = binary_tree_node(foot->left->left, 8);
+	binary_tree_print(foot);
+	complete = binary_tree_is_complete(foot);
+	printf("Is %d complete: %d\n", foot->n, complete);
 
-	root->left->right->left = binary_tree_node(root->left->right, 23);
-	binary_tree_print(root);
-	complete = binary_tree_is_complete(root);
-	printf("Is %d complete: %d\n", root->n, complete);
+	foot->left->right->left = binary_tree_node(foot->left->right, 23);
+	binary_tree_print(foot);
+	complete = binary_tree_is_complete(foot);
+	printf("Is %d complete: %d\n", foot->n, complete);
 
-	binary_tree_delete(root);
+	binary_tree_delete(foot);
 	return (0);
 }

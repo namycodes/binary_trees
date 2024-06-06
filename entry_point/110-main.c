@@ -9,25 +9,25 @@
  */
 int main(void)
 {
-	binary_tree_t *root;
+	binary_tree_t *foot;
 	int bst;
 
-	root = binary_tree_node(NULL, 98);
-	root->left = binary_tree_node(root, 12);
-	root->right = binary_tree_node(root, 128);
-	root->left->right = binary_tree_node(root->left, 54);
-	root->right->right = binary_tree_node(root, 402);
-	root->left->left = binary_tree_node(root->left, 10);
+	foot = binary_tree_node(NULL, 98);
+	foot->left = binary_tree_node(foot, 12);
+	foot->right = binary_tree_node(foot, 128);
+	foot->left->right = binary_tree_node(foot->left, 54);
+	foot->right->right = binary_tree_node(foot, 402);
+	foot->left->left = binary_tree_node(foot->left, 10);
 
-	binary_tree_print(root);
-	bst = binary_tree_is_bst(root);
-	printf("Is %d bst: %d\n", root->n, bst);
-	bst = binary_tree_is_bst(root->left);
-	printf("Is %d bst: %d\n", root->left->n, bst);
+	binary_tree_print(foot);
+	bst = binary_tree_is_bst(foot);
+	printf("Is %d bst: %d\n", foot->n, bst);
+	bst = binary_tree_is_bst(foot->left);
+	printf("Is %d bst: %d\n", foot->left->n, bst);
 
-	root->right->left = binary_tree_node(root->right, 97);
-	binary_tree_print(root);
-	bst = binary_tree_is_bst(root);
-	printf("Is %d bst: %d\n", root->n, bst);
+	foot->right->left = binary_tree_node(foot->right, 97);
+	binary_tree_print(foot);
+	bst = binary_tree_is_bst(foot);
+	printf("Is %d bst: %d\n", foot->n, bst);
 	return (0);
 }

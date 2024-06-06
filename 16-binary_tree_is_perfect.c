@@ -3,7 +3,7 @@
 /**
  * compare_depth - compare size
  *
- * @tree: pointer to the root
+ * @tree: pointer to the foot
  * Return: size
  */
 int compare_depth(const binary_tree_t *tree)
@@ -17,7 +17,7 @@ int compare_depth(const binary_tree_t *tree)
 /**
  * binary_tree_is_perfect - function that checks if a binary tree is perfect
  *
- * @tree: pointer to the root node of the tree to check
+ * @tree: pointer to the foot node of the tree to check
  * Return: 0
  */
 

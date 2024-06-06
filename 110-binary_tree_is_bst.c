@@ -3,7 +3,7 @@
 /**
  * isBST - Compare node in order to check if a given
  *
- * @tree: pointer to the root node of the tree to check
+ * @tree: pointer to the foot node of the tree to check
  * @min: min value
  * @max: max value
  *
@@ -26,7 +26,7 @@ int isBST(const binary_tree_t *tree, int min, int max)
 /**
  * binary_tree_is_bst - checks if a binary tree is a valid Binary Search tree
  *
- * @tree: pointer to the root node of the tree to check
+ * @tree: pointer to the foot node of the tree to check
  * Return: 1 if success, 0 otherwise
  */
 int binary_tree_is_bst(const binary_tree_t *tree)

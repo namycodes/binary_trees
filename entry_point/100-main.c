@@ -27,21 +27,21 @@ void launch_test(binary_tree_t *n1, binary_tree_t *n2)
  */
 int main(void)
 {
-	binary_tree_t *root;
+	binary_tree_t *foot;
 
-	root = binary_tree_node(NULL, 98);
-	root->left = binary_tree_node(root, 12);
-	root->right = binary_tree_node(root, 402);
-	root->left->right = binary_tree_node(root->left, 54);
-	root->right->right = binary_tree_node(root->right, 128);
-	root->left->left = binary_tree_node(root->left, 10);
-	root->right->left = binary_tree_node(root->right, 45);
-	root->right->right->left = binary_tree_node(root->right->right, 92);
-	root->right->right->right = binary_tree_node(root->right->right, 65);
-	binary_tree_print(root);
+	foot = binary_tree_node(NULL, 98);
+	foot->left = binary_tree_node(foot, 12);
+	foot->right = binary_tree_node(foot, 402);
+	foot->left->right = binary_tree_node(foot->left, 54);
+	foot->right->right = binary_tree_node(foot->right, 128);
+	foot->left->left = binary_tree_node(foot->left, 10);
+	foot->right->left = binary_tree_node(foot->right, 45);
+	foot->right->right->left = binary_tree_node(foot->right->right, 92);
+	foot->right->right->right = binary_tree_node(foot->right->right, 65);
+	binary_tree_print(foot);
 
-	launch_test(root->left, root->right);
-	launch_test(root->right->left, root->right->right->right);
-	launch_test(root->right->right, root->right->right->right);
+	launch_test(foot->left, foot->right);
+	launch_test(foot->right->left, foot->right->right->right);
+	launch_test(foot->right->right, foot->right->right->right);
 	return (0);
 }

@@ -1,12 +1,12 @@
 #include "binary_trees.h"
 size_t bts(const binary_tree_t *tree);
-heap_t *heap_nf(heap_t *root, size_t number);
+heap_t *heap_nf(heap_t *foot, size_t number);
 heap_t *heap_r(heap_t *new, heap_t *parent);
 
 /**
  * heap_insert - heap inserter
  *
- * @tree: double pointer to root
+ * @tree: double pointer to foot
  * @value: the value to store
  * Return: pointer to the created node
  */
@@ -53,7 +53,7 @@ heap_t *heap_insert(heap_t **tree, int value)
 /**
  * bts - measure the tree
  *
- * @tree: pointer to root
+ * @tree: pointer to foot
  * Return: size, otherwise 0
  */
 
@@ -67,23 +67,23 @@ size_t bts(const binary_tree_t *tree)
 /**
  * heap_nf - heap node finder
  *
- * @root: pointer to the root
+ * @foot: pointer to the foot
  * @number: index of the node to find
  * Return: pointer to the node
  */
-heap_t *heap_nf(heap_t *root, size_t number)
+heap_t *heap_nf(heap_t *foot, size_t number)
 {
 	size_t parentn, dir;
 
 	if (number == 0)
-		return (root);
+		return (foot);
 
 	parentn = (number - 1) / 2;
 	dir = (number - 1) % 2;
 
 	if (dir == 0)
-		return (heap_nf(root, parentn)->left);
-	return (heap_nf(root, parentn)->right);
+		return (heap_nf(foot, parentn)->left);
+	return (heap_nf(foot, parentn)->right);
 }
 
 /**

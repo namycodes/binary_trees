@@ -9,22 +9,22 @@
  */
 int main(void)
 {
-	binary_tree_t *root;
+	binary_tree_t *foot;
 
-	root = binary_tree_node(NULL, 98);
-	root->right = binary_tree_node(root, 128);
-	root->right->right = binary_tree_node(root->right, 402);
-	binary_tree_print(root);
-	printf("Rotate-left %d\n", root->n);
-	root = binary_tree_rotate_left(root);
-	binary_tree_print(root);
+	foot = binary_tree_node(NULL, 98);
+	foot->right = binary_tree_node(foot, 128);
+	foot->right->right = binary_tree_node(foot->right, 402);
+	binary_tree_print(foot);
+	printf("Rotate-left %d\n", foot->n);
+	foot = binary_tree_rotate_left(foot);
+	binary_tree_print(foot);
 	printf("\n");
 
-	root->right->right = binary_tree_node(root->right, 450);
-	root->right->left = binary_tree_node(root->right, 420);
-	binary_tree_print(root);
-	printf("Rotate-left %d\n", root->n);
-	root = binary_tree_rotate_left(root);
-	binary_tree_print(root);
+	foot->right->right = binary_tree_node(foot->right, 450);
+	foot->right->left = binary_tree_node(foot->right, 420);
+	binary_tree_print(foot);
+	printf("Rotate-left %d\n", foot->n);
+	foot = binary_tree_rotate_left(foot);
+	binary_tree_print(foot);
 	return (0);
 }

@@ -9,15 +9,15 @@
  */
 int main(void)
 {
-	binary_tree_t *root;
+	binary_tree_t *foot;
 
-	root = binary_tree_node(NULL, 98);
-	root->left = binary_tree_node(root, 12);
-	root->right = binary_tree_node(root, 402);
-	binary_tree_print(root);
+	foot = binary_tree_node(NULL, 98);
+	foot->left = binary_tree_node(foot, 12);
+	foot->right = binary_tree_node(foot, 402);
+	binary_tree_print(foot);
 	printf("\n");
-	binary_tree_insert_right(root->left, 54);
-	binary_tree_insert_right(root, 128);
-	binary_tree_print(root);
+	binary_tree_insert_right(foot->left, 54);
+	binary_tree_insert_right(foot, 128);
+	binary_tree_print(foot);
 	return (0);
 }

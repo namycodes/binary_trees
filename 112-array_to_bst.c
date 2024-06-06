@@ -5,7 +5,7 @@
  *
  * @array: pointer to the first element of the array to be converted
  * @size: number of element in the array
- * Return: pointer to the root node of the created BST, or NULL on failure
+ * Return: pointer to the foot node of the created BST, or NULL on failure
  */
 bst_t *array_to_bst(int *array, size_t size)
 {

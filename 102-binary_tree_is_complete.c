@@ -2,63 +2,63 @@
 
 /**
  * count_nodes - Counts ths inside a tree
- * @root:  node
+ * @foot:  node
  *
  * Return: Number odes
  */
 
-int count_nodes(binary_tree_t *root)
+int count_nodes(binary_tree_t *foot)
 {
-	if (!root)
+	if (!foot)
 		return (0);
 
-	return (1 + count_nodes(root->left) + count_nodes(root->right));
+	return (1 + count_nodes(foot->left) + count_nodes(foot->right));
 }
 
 
 /**
  * is_complete - Checks if a tree is complete
- * @root: Pointer to tree's root
+ * @foot: Pointer to tree's foot
  * @index: Index of the node been evaluated
  * @n: number of trees nod
  *
  * Return: 1 if the tree is a heap, 0 otherwise
  */
 
-int is_complete(binary_tree_t *root, int index, int n)
+int is_complete(binary_tree_t *foot, int index, int n)
 {
-	if (!root)
+	if (!foot)
 		return (0);
 
 	if (index >= n)
 		return (0);
-	if (!root->left && !root->right)
+	if (!foot->left && !foot->right)
 		return (1);
-	if (root->right && !root->left)
+	if (foot->right && !foot->left)
 		return (0);
-	if (root->left && !root->right)
-		return (is_complete(root->left, index * 2 + 1, n));
+	if (foot->left && !foot->right)
+		return (is_complete(foot->left, index * 2 + 1, n));
 
-	return (is_complete(root->left, index * 2 + 1, n) &&
-		is_complete(root->right, index * 2 + 2, n));
+	return (is_complete(foot->left, index * 2 + 1, n) &&
+		is_complete(foot->right, index * 2 + 2, n));
 }
 
 /**
  * binary_tree_is_complete - check for bt complete
- * @tree: Pointer to root
+ * @tree: Pointer to foot
  *
  * Return: 1 if
  */
 int binary_tree_is_complete(const binary_tree_t *tree)
 {
 	int nod;
-	binary_tree_t *root;
+	binary_tree_t *foot;
 
 	if (!tree)
 		return (0);
 
-	root = (binary_tree_t *)tree;
-	nod = count_nodes(root);
+	foot = (binary_tree_t *)tree;
+	nod = count_nodes(foot);
 
-	return (is_complete(root, 0, nod));
+	return (is_complete(foot, 0, nod));
 }

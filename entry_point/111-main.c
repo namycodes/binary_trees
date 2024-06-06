@@ -9,28 +9,28 @@
  */
 int main(void)
 {
-	bst_t *root;
+	bst_t *foot;
 	bst_t *node;
 
-	root = NULL;
-	node = bst_insert(&root, 98);
+	foot = NULL;
+	node = bst_insert(&foot, 98);
 	printf("Inserted: %d\n", node->n);
-	node = bst_insert(&root, 402);
+	node = bst_insert(&foot, 402);
 	printf("Inserted: %d\n", node->n);
-	node = bst_insert(&root, 12);
+	node = bst_insert(&foot, 12);
 	printf("Inserted: %d\n", node->n);
-	node = bst_insert(&root, 46);
+	node = bst_insert(&foot, 46);
 	printf("Inserted: %d\n", node->n);
-	node = bst_insert(&root, 128);
+	node = bst_insert(&foot, 128);
 	printf("Inserted: %d\n", node->n);
-	node = bst_insert(&root, 256);
+	node = bst_insert(&foot, 256);
 	printf("Inserted: %d\n", node->n);
-	node = bst_insert(&root, 512);
+	node = bst_insert(&foot, 512);
 	printf("Inserted: %d\n", node->n);
-	node = bst_insert(&root, 1);
+	node = bst_insert(&foot, 1);
 	printf("Inserted: %d\n", node->n);
-	node = bst_insert(&root, 128);
+	node = bst_insert(&foot, 128);
 	printf("Node should be nil -> %p\n", (void *)node);
-	binary_tree_print(root);
+	binary_tree_print(foot);
 	return (0);
 }

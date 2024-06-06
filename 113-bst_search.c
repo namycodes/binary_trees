@@ -3,7 +3,7 @@
 /**
  * bst_search - ches for a value in a Binary Search Tree
  *
- * @tree: pointer to the root node of the BST to search
+ * @tree: pointer to the foot node of the BST to search
  * @value: value to search in the tree
  * Return: pointer to the node containing a value equals to value
  */

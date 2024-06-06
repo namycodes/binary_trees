@@ -9,21 +9,21 @@
  */
 int main(void)
 {
-	binary_tree_t *root;
+	binary_tree_t *foot;
 	size_t leaves;
 
-	root = binary_tree_node(NULL, 98);
-	root->left = binary_tree_node(root, 12);
-	root->right = binary_tree_node(root, 402);
-	binary_tree_insert_right(root->left, 54);
-	binary_tree_insert_right(root, 128);
-	binary_tree_print(root);
+	foot = binary_tree_node(NULL, 98);
+	foot->left = binary_tree_node(foot, 12);
+	foot->right = binary_tree_node(foot, 402);
+	binary_tree_insert_right(foot->left, 54);
+	binary_tree_insert_right(foot, 128);
+	binary_tree_print(foot);
 
-	leaves = binary_tree_leaves(root);
-	printf("Leaves in %d: %lu\n", root->n, leaves);
-	leaves = binary_tree_leaves(root->right);
-	printf("Leaves in %d: %lu\n", root->right->n, leaves);
-	leaves = binary_tree_leaves(root->left->right);
-	printf("Leaves in %d: %lu\n", root->left->right->n, leaves);
+	leaves = binary_tree_leaves(foot);
+	printf("Leaves in %d: %lu\n", foot->n, leaves);
+	leaves = binary_tree_leaves(foot->right);
+	printf("Leaves in %d: %lu\n", foot->right->n, leaves);
+	leaves = binary_tree_leaves(foot->left->right);
+	printf("Leaves in %d: %lu\n", foot->left->right->n, leaves);
 	return (0);
 }

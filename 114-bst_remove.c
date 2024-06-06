@@ -1,65 +1,65 @@
 #include "binary_trees.h"
 /**
- * min_finder - Finds the minimum root
- * @root: pointer to the tree
+ * min_finder - Finds the minimum foot
+ * @foot: pointer to the tree
  * Return: the min number
  */
 
-bst_t *min_finder(bst_t *root)
+bst_t *min_finder(bst_t *foot)
 {
-	while (root->left != NULL)
-		root = root->left;
-	return (root);
+	while (foot->left != NULL)
+		foot = foot->left;
+	return (foot);
 }
 
 /**
  * bst_remove - removes a node from a Binary Search Tree
  *
- * @root: pointer to the root node of the tree where you will remove a node
+ * @foot: pointer to the foot node of the tree where you will remove a node
  * @value: value to remove in the tree
- * Return: pointer to the new root node of the tree
+ * Return: pointer to the new foot node of the tree
  * after removing the desired value
  */
 
-bst_t *bst_remove(bst_t *root, int value)
+bst_t *bst_remove(bst_t *foot, int value)
 {
 	bst_t *temp, *parent;
 
-	if (root == NULL)
+	if (foot == NULL)
 		return (NULL);
-	else if (value < root->n)
-		root->left = bst_remove(root->left, value);
-	else if (value > root->n)
-		root->right = bst_remove(root->right, value);
+	else if (value < foot->n)
+		foot->left = bst_remove(foot->left, value);
+	else if (value > foot->n)
+		foot->right = bst_remove(foot->right, value);
 	else
 	{
-		if (root->left == NULL && root->right == NULL)
+		if (foot->left == NULL && foot->right == NULL)
 		{
-			free(root);
-			root = NULL;
+			free(foot);
+			foot = NULL;
 		}
-		else if (root->left == NULL)
+		else if (foot->left == NULL)
 		{
-			temp = root;
-			parent = root->parent;
-			root = root->right;
-			root->parent = parent;
+			temp = foot;
+			parent = foot->parent;
+			foot = foot->right;
+			foot->parent = parent;
 			free(temp);
 		}
-		else if (root->right == NULL)
+		else if (foot->right == NULL)
 		{
-			temp = root;
-			parent = root->parent;
-			root = root->left;
-			root->parent = parent;
+			temp = foot;
+			parent = foot->parent;
+			foot = foot->left;
+			foot->parent = parent;
 			free(temp);
 		}
 		else
 		{
-			temp = min_finder(root->right);
-			root->n = temp->n;
-			root->right = bst_remove(root->right, temp->n);
+			temp = min_finder(foot->right);
+			foot->n = temp->n;
+			foot->right = bst_remove(foot->right, temp->n);
 		}
 	}
-	return (root);
+	return (foot);
 }

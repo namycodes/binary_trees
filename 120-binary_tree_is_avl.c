@@ -3,7 +3,7 @@
 /**
  * btl - auxiliary level
  *
- * @tree: pointer to root
+ * @tree: pointer to foot
  * Return: integer with level
  */
 
@@ -27,7 +27,7 @@ int btl(const binary_tree_t *tree)
 /**
  * bt_balance - factor calculate
  *
- * @tree: pointer to root
+ * @tree: pointer to foot
  * Return: integer with factor
  */
 
@@ -42,7 +42,7 @@ int bt_balance(const binary_tree_t *tree)
 /**
  * bavl - Check level
  *
- * @tree: pointer to root
+ * @tree: pointer to foot
  * @min: min value
  * @max: max value
  * Return: 1 if is AVL, 0 otherwise
@@ -68,7 +68,7 @@ int bavl(const binary_tree_t *tree, int min, int max)
 
 /**
  * binary_tree_is_avl - checks if a binary tree is a valid AVL Tree
- * @tree: pointer to the root node of the tree to check
+ * @tree: pointer to the foot node of the tree to check
  *
  * Return: 1 if tree is a valid AVL Tree, and 0 otherwise
  */
